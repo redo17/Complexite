@@ -1,0 +1,28 @@
+a)
+Max := 0, KMax = 0, LMax = 0
+Pour k allant de 0 a la taille du tableau T
+	Pour L allant de k a la taille du tableau T
+		SousSeq := 0
+		Pour KL allant de K a L
+			Si SousSeq > Max
+				Max := SousSeq
+				KMax := K
+				LMax := L 
+			FIN Si
+		FIN Pour
+	FIN Pour
+FIN Pour
+
+b)
+La 1ere boucle parcours n fois le tableau 
+la 2eme boucle parcours (n+1)/2 fois le tableau
+la 3eme boucle parcours (n+1)/2 fois le tableau
+comme la 2eme boucle est dans la premiere et que la 3eme est dans la seconde, ils sont tous multiplier ensemble
+n * ((n+1)/2) * ((n+1)/2)
+(n3 + 2n2 + n) / 4 = O(n3) car le reste est negligable par rapport a n3
+
+c)
+OK
+
+d)
+sur 100 valeurs il met 0.008s en real time
