@@ -14,12 +14,12 @@ void main (int argc, char *argv[])
 			for(k = i; k <= j; k++)
 			{
 				SousSeq += atoi(argv[k]);
-				if(SousSeq > Max)
-				{
-					Max = SousSeq;
-					Idi = i;
-					Idj = j;
-				}
+			}
+			if(SousSeq > Max)
+			{
+				Max = SousSeq;
+				Idi = i;
+				Idj = j;
 			}
 		}
 	}
