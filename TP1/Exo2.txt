@@ -1,0 +1,26 @@
+a)
+Max := 0, KMax = 0, LMax = 0
+Pour K allant de 0 a la taille du tableau T
+	SousSeq := 0
+	Pour L allant de K a la taille du tableau T
+		SousSeq := SousSeq + T[I]
+		Si SousSeq > Max
+			Max := SousSeq
+			KMax := K
+			LMax := L 
+		FIN Si
+	FIN Pour
+FIN Pour
+
+b)
+La 1ere boucle "pour" parcours n fois le tableau 
+La 2eme boucle "pour" parcours (n+1)/2 fois le tableau
+Comme la 2eme boucle est dans la premiere, ils sont multiplier ensemble
+n * ((n+1)/2) = (n2 + n) /2 = n2 car le reste est negligable par rapport a n2
+
+c)
+OK
+
+d)
+Sur 100 valeurs il met 0.002s en real time
+
