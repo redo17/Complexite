@@ -1,0 +1,63 @@
+--------------- A ---------------
+Max := 0, MaxG := 0, MaxD := 0,kmax := 0, lmax := 0
+
+POUR i ALLANT DE 0 A LA MOITIE DU TABLEAU T
+
+	SousSeqG := 0
+	SousSeqD := 0
+	z := TAILLE DE T
+
+	POUR j ALLANT DE i A LA MOITIE DU TABLEAU T
+
+		SousSeqG := SousSeqG + T[j]
+		SousSeqD := SousSeqD + T[TAILLE DE T - j - 1]
+		z := z - 1
+
+		SI SousSeqG > MaxG
+			MaxG := SousSeqG
+			kmax := i
+		FIN SI
+
+		SI SousSeqD > MaxD
+			MaxD := SousSeqD
+			lmax := (TAILE DE T - j - 1) + (TAILLE DE T - z - 1)
+		FIN SI
+	FIN POUR
+FIN POUR
+
+m := lmax
+
+POUR i ALLANT DE kmax A m
+
+	SousSeq := 0
+
+	POUR j ALLANT DE i A m + 1
+		
+		SousSeq := SousSeq + Tab[j]
+
+		SI SousSeq > Max
+			Max := SousSeq
+			kmax := i
+			lmax := j
+		FIN SI
+	FIN POUR
+FIN POUR
+
+--------------- B ---------------
+n /2
+(n/2)+1 /2
+m
+(m+1) /2
+
+--------------- C ---------------
+
+Fait ...
+
+--------------- D ---------------
+
+Instance ...
+
+--------------- E ---------------
+
+Instance ...
+
