@@ -2,27 +2,20 @@
 #include <stdlib.h>
 #include <time.h> 
 
-void main ()
+void main (int argc, char *argv[])
 {
-	int Tab[10];
-	int Max = 0,MaxG = 0, MaxD = 0,kmax = 0, lmax = 0,n=10 ;
+	int Max = 0,MaxG = 0, MaxD = 0,kmax = 0, lmax = 0 ;
 	int SousSeq,SousSeqG,SousSeqD,i ,j, z, m;
 	
-	srand(time(NULL));
-	for(i = 0; i < 10; i++) Tab[i] = rand()%20 -10;
-	
-	for(i = 0; i < 10; i++) printf("%d ",Tab[i]);
-
-	printf("\n");
-	
-	for(i = 0; i < (n/2); i++)
+		
+	for(i = 1; i < (argc/2)+1; i++)
 	{
-		SousSeqG = 0; SousSeqD = 0;z = n;
+		SousSeqG = 0; SousSeqD = 0;z = argc;
 
-		for(j = i; j < (n/2) ; j++)
+		for(j = i; j < (argc/2)+1 ; j++)
 		{
-			SousSeqG += Tab[j];
-			SousSeqD += Tab[n-j-1];
+			SousSeqG += atoi(argv[j]);
+			SousSeqD += atoi(argv[argc-j-1]);
 			z--;
 
 			if(SousSeqG > MaxG)
@@ -34,7 +27,7 @@ void main ()
 			if(SousSeqD > MaxD)
 			{
 				MaxD = SousSeqD;
-				lmax = (n-j-1) + (n-z-1);
+				lmax = (argc-j-1) + (argc-z-1);
 				//lmaxD = n-z-1;				
 			}
 		}
@@ -50,7 +43,7 @@ void main ()
 
 		for(j = i; j < m +1 ; j++)
 		{
-			SousSeq += Tab[j];
+			SousSeq += atoi(argv[j]);
 
 			if(SousSeq > Max)
 			{
