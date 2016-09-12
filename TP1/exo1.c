@@ -4,7 +4,7 @@
 
 void main (int argc, char *argv[])
 {
-	int Max = 0, Idi = 0, Idj = 0;
+	int Max = argv[1], Idi = 0, Idj = 0;
 	int SousSeq,i,j,k;
 	
 	for(i = 1; i < argc; i++){
