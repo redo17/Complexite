@@ -44,10 +44,14 @@ POUR i ALLANT DE kmax A m
 FIN POUR
 
 --------------- B ---------------
-n / 2
-(n /2 ) + 1 /2
-m
-(m + 1 ) /2
+La 1ere boucle "pour" parcours n/2 fois le tableau 
+La 2eme boucle "pour" parcours (n/2 + 1)/2 fois le tableau
+
+La 3eme boucle "pour" parcours m fois le tableau 
+La 2eme boucle "pour" parcours (m + 1)/2 fois le tableau
+
+Comme ... car le reste est negligable par rapport a n2
+
 
 --------------- C ---------------
 
@@ -55,7 +59,7 @@ Fait ...
 
 --------------- D ---------------
 
-Instance ...
+Sur 100 valeurs il met 0.002s en real time
 
 --------------- E ---------------
 
