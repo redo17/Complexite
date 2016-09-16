@@ -4,7 +4,7 @@
 
 void main (int argc, char *argv[])
 {
-	int Max = argv[1], Idi = 0, Idj = 0;
+	int Max = atoi(argv[1]), Idi = 0, Idj = 0;
 	int SousSeq,i,j;
 	
 	for(i = 1; i < argc; i++){
