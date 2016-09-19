@@ -33,7 +33,7 @@ void main (int argc, char *argv[])
 		}
 	}
 	
-	printf("La sous sequence Max Gauche est de %d et Droite est de %d , la borne k est %d, la borne l est %d \n",MaxG,MaxD,kmax,lmax);
+	//printf("La sous sequence Max Gauche est de %d et Droite est de %d , la borne k est %d, la borne l est %d \n",MaxG,MaxD,kmax,lmax);
 	
 	m = lmax ;	
 	
@@ -53,7 +53,7 @@ void main (int argc, char *argv[])
 			}
 		}
 	}
-	printf("La sous sequence Max est de %d , la borne k est %d, la borne l est %d\n",Max,kmax,lmax);
+	printf("%d %d",kmax-1,lmax-1);
 }
 	
 	
