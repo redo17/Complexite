@@ -8,7 +8,7 @@
 void main (int argc, char *argv[])
 {
 	int Max = atoi(argv[1]), Idi = 1, Idj = 1;
-	int SousSeq = 0,SousSeqMax = 0,j,i;
+	int SousSeq = 0,SousSeqMax = 0,j,i=2;
 	
 	for(j = 2; j < argc; j++){
 		//SousSeq as comme bornes Idj et j
@@ -20,7 +20,7 @@ void main (int argc, char *argv[])
 		//Si la nouvelle cellule est superieur a la SousSeqMax alors
 		//SousSeq max est la nouvelle cellule
 		//(dans le cas où SousSeqMax est/etait negatif)
-		if(atoi(argv[j]) >= SousSeqMax)
+		if(atoi(argv[j]) > SousSeqMax)
 		{
 			SousSeqMax = atoi(argv[j]);
 			i = j;
