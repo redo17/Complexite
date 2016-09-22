@@ -1,0 +1,28 @@
+a)
+Max := T[0], KMax := 0, LMax := 0;
+SousSeq :=0, SousSeqMax :=0;
+
+Pour j allant de 1 a taille du tableau
+ SousSeq += T[j];
+ SousSeqMax += T[j];
+ Si T[j] > SousSeqMax
+  alors SousSeqMax = T[j]
+  enregistrement de la borne gauche
+ Si SousSeq > 0
+  alors Max += SousSeq;
+  enregistrement de la borne droite
+  remise a zero de SousSeq
+ Si SousSeqMax > Max
+  alors Max = SousSeqMax
+  enregistrement des bornes
+  remise a zero des SousSeq
+  decalage de la borne de gauche de SousSeqMax de +1
+
+b)
+une seul parcour du tableau donc O(n)
+
+c)
+OK
+
+d)
+instantané
