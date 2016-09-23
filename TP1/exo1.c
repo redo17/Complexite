@@ -5,13 +5,16 @@
 void main (int argc, char *argv[])
 {
 	int Max = atoi(argv[1]), Idi = 0, Idj = 0;
-	int SousSeq,i,j;
+	int SousSeq,i,j,k;
 	
 	for(i = 1; i < argc; i++){
-		SousSeq = 0;
 		for(j = i; j < argc ; j++)
 		{
-			SousSeq += atoi(argv[j]);
+			SousSeq = 0;
+			for(k = i; k <= j; k++)
+			{
+				SousSeq += atoi(argv[k]);
+			}
 			if(SousSeq > Max)
 			{
 				Max = SousSeq;
@@ -22,6 +25,3 @@ void main (int argc, char *argv[])
 	}
 	printf("%d %d",Idi-1,Idj-1);
 }
-	
-	
-

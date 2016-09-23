@@ -1,57 +1,77 @@
 --------------- A ---------------
-Max := 0, MaxG := 0, MaxD := 0,kmax := 0, lmax := 0
 
-POUR i ALLANT DE 0 A LA MOITIE DU TABLEAU T
+SousSeqMilieu(Tableau,k,l)
+VAR
+	element := milieu du tableau
+	temporaire := Tableau[element]
+	resultat := temporaire
+	
+DEBUT
+	POUR i ALLANT DE milieu de la sequence A k
+		temporaire := temporaire + Tableau[i];
+		SI temporaire > resultat
+			resultat := temporaire
+		FINSI
+	FINPOUR
+	
+	temporaire := resultat
+	
+	SI (l - k > 1)
+		POUR i ALLANT DE milieu de la sequence A l
+			temporaire := temporaire + Tableau[i];
+			SI temporaire > resultat
+				resultat := temporaire
+			FINSI
+		FINPOUR
+	FINSI
 
-	SousSeqG := 0
-	SousSeqD := 0
-	z := TAILLE DE T
+	RETOURNER resultat
+FIN
 
-	POUR j ALLANT DE i A LA MOITIE DU TABLEAU T
 
-		SousSeqG := SousSeqG + T[j]
-		SousSeqD := SousSeqD + T[TAILLE DE T - j - 1]
-		z := z - 1
 
-		SI SousSeqG > MaxG
-			MaxG := SousSeqG
-			kmax := i
-		FIN SI
+SousSeq(Tableau,k,l)
+VAR
+maximum := 0	
+DEBUT
+	SI (k == l)
+	ALORS 
+		maximum := Tableau[k] FINSI
+	SINON	
+		maximum := CalculerMaximum
+			(
+				SousSeq(Tableau, k, milieu de la sequence) ,
+				SousSeqMilieu(Tableau, k, l) ,
+				SousSeq(Tableau, milieu de la sequence +1, l)
+			)
+	FINSI
+	
+	RETOURNER maximum
+FIN
 
-		SI SousSeqD > MaxD
-			MaxD := SousSeqD
-			lmax := (TAILE DE T - j - 1) + (TAILLE DE T - z - 1)
-		FIN SI
-	FIN POUR
-FIN POUR
 
-m := lmax
+void main (int argc, char *argv[])
+{
+	int i,Tab[argc-1];
+	for(i=1 ; i < argc ; i++)		
+		Tab[i-1]=atoi(argv[i]);	
+			
+	int *resultat;
+	resultat=malloc(3);
+	resultat=SousSeq(Tab,0,argc-2);
+	
+	//printf("%d %d %d\n",resultat[0],resultat[1],resultat[2]);
+	printf("La sous sequence Max est de %d, la borne k est %d, la borne l est %d\n",resultat[0],resultat[1],resultat[2]);
+	
 
-POUR i ALLANT DE kmax A m
+}
 
-	SousSeq := 0
-
-	POUR j ALLANT DE i A m + 1
-		
-		SousSeq := SousSeq + Tab[j]
-
-		SI SousSeq > Max
-			Max := SousSeq
-			kmax := i
-			lmax := j
-		FIN SI
-	FIN POUR
-FIN POUR
 
 --------------- B ---------------
-La 1ere boucle "pour" parcours n/2 fois le tableau 
-La 2eme boucle "pour" parcours (n/2 + 1)/2 fois le tableau
-
-La 3eme boucle "pour" parcours m fois le tableau 
-La 2eme boucle "pour" parcours (m + 1)/2 fois le tableau
-
-Comme ... car le reste est negligable par rapport a n2
-
+la complexite de l'algo est comme suit :
+	Complexite des deux appel recurssifs = 2 * C(n/2)
+	Complexite de SousSeqMilieu = n
+C(algo3) = 2C(n/2) + n = O(n * logn)
 
 --------------- C ---------------
 
@@ -60,8 +80,3 @@ Fait ...
 --------------- D ---------------
 
 Sur 100 valeurs il met 0.002s en real time
-
---------------- E ---------------
-
-Instance ...
-
