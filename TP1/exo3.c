@@ -79,7 +79,7 @@ void main (int argc, char *argv[])
 	resultat=SousSeq(Tab,0,argc-2);
 	
 	//printf("%d %d %d\n",resultat[0],resultat[1],resultat[2]);
-	printf("La sous sequence Max est de %d, la borne k est %d, la borne l est %d\n",resultat[0],resultat[1],resultat[2]);
+	printf("%d %d %d\n",resultat[0],resultat[1],resultat[2]);
 	
 
 }

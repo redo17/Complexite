@@ -23,5 +23,5 @@ void main (int argc, char *argv[])
 			}
 		}
 	}
-	printf("%d %d",Idi-1,Idj-1);
+	printf("%d %d %d",Max,Idi-1,Idj-1);
 }

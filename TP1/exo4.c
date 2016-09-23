@@ -48,7 +48,7 @@ void main (int argc, char *argv[])
 				i = i+1;
 		}
 	}
-	printf("La sous sequence Max est de %d, la borne k est %d, la borne l est %d\n",Max,Idi-1,Idj-1);
+	printf("%d %d %d\n",Max,Idi-1,Idj-1);
 }
 	
 	
