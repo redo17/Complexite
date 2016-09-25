@@ -9,18 +9,13 @@
 //MaxBisValue contient la meilleur sous sequence qui se trouve entre la borne gauche de MaxValue et T[j]
 //elle est utilisée pour trouver une nouvelle borne a gauche de MaxValue
 
-
-
 void main (int argc, char *argv[])
 {
 	int MaxValue = atoi(argv[1]), KMax = 1, LMax = 1;
 	int SousSeqValue = 0,MaxBisValue = 0,j,i=2;
 	
 	for(j = 2; j < argc; j++){
-		//SousSeqValue as comme bornes LMax et j
 		SousSeqValue += atoi(argv[j]);
-		//MaxBisValue additioné a la nouvelle cellule du tableau
-		//MaxBisValue contient la meilleur sous sequence entre KMax et j
 		MaxBisValue += atoi(argv[j]);
 		
 		//Si la nouvelle cellule est superieur a la MaxBisValue alors
