@@ -2,50 +2,59 @@
 #include <stdlib.h>
 #include <math.h>
 
+//Explications variables
+//MaxValue contient le meilleur resultat actuel et final
+//SousSeqValue contient les valeurs entre la borne droite de MaxValue et T[j]
+//elle est utilisée pour trouver une nouvelle borne a droite de MaxValue
+//MaxBisValue contient la meilleur sous sequence qui se trouve entre la borne gauche de MaxValue et T[j]
+//elle est utilisée pour trouver une nouvelle borne a gauche de MaxValue
+
+
+
 void main (int argc, char *argv[])
 {
-	int Max = atoi(argv[1]), Idi = 1, Idj = 1;
-	int SousSeq = 0,SousSeqBis = 0,j,i=2;
+	int MaxValue = atoi(argv[1]), KMax = 1, LMax = 1;
+	int SousSeqValue = 0,MaxBisValue = 0,j,i=2;
 	
 	for(j = 2; j < argc; j++){
-		//SousSeq as comme bornes Idj et j
-		SousSeq += atoi(argv[j]);
-		//SousSeqBis additioné a la nouvelle cellule du tableau
-		//SouSeqBis contient la meilleur SousSeq entre Idj et j
-		SousSeqBis += atoi(argv[j]);
+		//SousSeqValue as comme bornes LMax et j
+		SousSeqValue += atoi(argv[j]);
+		//MaxBisValue additioné a la nouvelle cellule du tableau
+		//MaxBisValue contient la meilleur sous sequence entre KMax et j
+		MaxBisValue += atoi(argv[j]);
 		
-		//Si la nouvelle cellule est superieur a la SousSeqBis alors
-		//SousSeqBis est la nouvelle cellule
-		//(dans le cas où SousSeqBis est/etait negatif)
-		if(atoi(argv[j]) > SousSeqBis)
+		//Si la nouvelle cellule est superieur a la MaxBisValue alors
+		//MaxBisValue est la nouvelle cellule
+		//(dans le cas où MaxBisValue est/etait negatif)
+		if(atoi(argv[j]) > MaxBisValue)
 		{
-			SousSeqBis = atoi(argv[j]);
+			MaxBisValue = atoi(argv[j]);
 			i = j;
 		}		
-		//Si SousSeq est superieur a zero, elle rajoute sa valeur a
-		//la Sequence Max et est remise a zero
+		//Si SousSeqValue est superieur a zero, elle rajoute sa valeur a
+		//MaxValue et est remise a zero
 		//Car une valeur positive ne peut etre que benefique au max
-		if(SousSeq > 0)
+		if(SousSeqValue > 0)
 		{
-			Max += SousSeq;
-			SousSeq = 0;
-			Idj = j;
+			MaxValue += SousSeqValue;
+			SousSeqValue = 0;
+			LMax = j;
 		}
-		//Si SousSeqBis est superieur a la Sequence Max alors
+		//Si MaxBisValue est superieur a la Sequence Max alors
 		//toute les SousSeq sont remise a zero a la recherche d'une valeur
 		//superieur a la valeur negative trouvée
-		if(SousSeqBis > Max)
+		if(MaxBisValue > MaxValue)
 		{
-			Max = SousSeqBis;
-			SousSeq = 0;
-			SousSeqBis = 0;
-			Idj = j;
-			Idi = i;
+			MaxValue = MaxBisValue;
+			SousSeqValue = 0;
+			MaxBisValue = 0;
+			LMax = j;
+			KMax = i;
 			if(i+1 < argc)
 				i = i+1;
 		}
 	}
-	printf("%d %d %d\n",Max,Idi-1,Idj-1);
+	printf("%d %d %d\n",Max,KMax-1,LMax-1);
 }
 	
 	
