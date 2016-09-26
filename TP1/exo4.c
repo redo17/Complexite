@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-//PS : Une Sequence Max ne demarrera pas a 0, cela peut fournir une sequence differente des autres fonctions
-//ce qui dit comparaison incorrect dans le script
-
 void main (int argc, char *argv[])
 {
 	int Max = atoi(argv[1]), Idi = 1, Idj = 1;
@@ -28,12 +25,12 @@ void main (int argc, char *argv[])
 		//Si SousSeq est superieur a zero, elle rajoute sa valeur a
 		//la Sequence Max et est remise a zero
 		//Car une valeur positive ne peut etre que benefique au max
-		if(SousSeq > 0)
+		/*if(SousSeq > 0)
 		{
 			Max += SousSeq;
 			SousSeq = 0;
 			Idj = j;
-		}
+		}*/
 		//Si SousSeqMax est superieur a la Sequence Max alors
 		//toute les SousSeq sont remise a zero a la recherche d'une valeur
 		//superieur a la valeur negative trouvée
