@@ -12,7 +12,7 @@
 void main (int argc, char *argv[])
 {
 	int MaxValue = atoi(argv[1]), KMax = 1, LMax = 1;
-	int SousSeqValue = 0,MaxBisValue = 0,j,i=2;
+	int SousSeqValue = 0,MaxBisValue = 0,j,LMaxBis=2;
 	
 	for(j = 2; j < argc; j++){
 		SousSeqValue += atoi(argv[j]);
@@ -24,7 +24,7 @@ void main (int argc, char *argv[])
 		if(atoi(argv[j]) > MaxBisValue)
 		{
 			MaxBisValue = atoi(argv[j]);
-			i = j;
+			LMaxBis = j;
 		}		
 		//Si SousSeqValue est superieur a zero, elle rajoute sa valeur a
 		//MaxValue et est remise a zero
@@ -44,12 +44,12 @@ void main (int argc, char *argv[])
 			SousSeqValue = 0;
 			MaxBisValue = 0;
 			LMax = j;
-			KMax = i;
-			if(i+1 < argc)
-				i = i+1;
+			KMax = LMaxBis;
+			if(LMaxBis+1 < argc)
+				LMaxBis = LMaxBis+1;
 		}
 	}
-	printf("%d %d %d\n",Max,KMax-1,LMax-1);
+	printf("%d %d %d\n",MaxValue,KMax-1,LMax-1);
 }
 	
 	
