@@ -4,11 +4,7 @@
 double factorielle(int n)
 {
 	double resultat=n;
-	while ( n>1 )
-	{
-		resultat*=(n-1);
-		n--;
-	}
+	while ( n>1 ) {resultat*=(n-1);n--;}
 	return resultat;	
 }
 
@@ -20,8 +16,8 @@ double coefBin(int n,int k)
 void main(int argc, char ** argv)
 {
 	if(argc != 3){
-		printf("requiert le nombre de tiroir en premier argument\n");
-		printf("requiert le nom du fichier pour le resultat en second argument\n");
+		printf("Veuillez respecter la syntaxe suivante :\n");
+		printf("./tiroirs \"Nombre de tiroirs\" tiroirs.cnf\n");
 		return;		
 	}
 
@@ -32,10 +28,11 @@ void main(int argc, char ** argv)
 	int tiroir, chaussette;
 	int chaussette1, chaussette2;
 
+	//printf("%d %d",nbTiroir,nbChaussette);
 	nbClauses = nbChaussette + nbTiroir*coefBin(nbChaussette,2);
 	nbVariables =nbChaussette * nbTiroir;
 	
-	fprintf(output,"p cnf %d %d\n\n",nbVariables,nbClauses);
+	fprintf(output,"p cnf %d %d\n",nbVariables,nbClauses);
 	
 	//la chaussette se trouve dans un seul tiroir
 	for(chaussette=0;chaussette<nbChaussette;chaussette++)
