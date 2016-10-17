@@ -3,7 +3,7 @@
 
 void main()
 {
-	FILE* output = fopen("","w");
+	FILE* output = fopen("ResultatFinal.txt","w");
 	FILE* input = fopen("Resultatminisat.txt","r");
 	FILE* sommetFile = fopen("Resultat3Color.cnf","r");
 	int nbSommet,i;
