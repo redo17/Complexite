@@ -1,30 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-double factorielle(int n)
-{
-	double resultat=n;
-	while ( n>1 )
-	{
-		resultat*=(n-1);
-		n--;
-	}
-	return resultat;	
-}
-
-double coefBin(int n,int k)
-{
-	return factorielle(n)/(factorielle(k)*(factorielle(n-k)));
-}
-
 void main(int argc, char ** argv)
 {
 	FILE* output = fopen("Resultat3Color.cnf","w");
 	int nbSommet = atoi(argv[1]);
 	int nbArete = atoi(argv[2]);
 	int nbCouleur = 3;
-	int nbVariables = nbSommet*nbCouleur;
-	int nbClauses = nbArete^nbCouleur + nbSommet;
+	int nbVariable = nbSommet*nbCouleur;
+	int nbClause = nbArete * nbCouleur + nbSommet;
 	int sommet, couleur;
 	int aretes[argc-3], i;
 	for(i=3; i < argc; i++)
@@ -43,8 +27,8 @@ void main(int argc, char ** argv)
 	}
 	//les aretes entre chaque sommet (pour chaque couleur)
 	for(couleur=0;couleur<nbCouleur;couleur++)
-	{
-		for(i=0; i<nbArete
-			fprintf(output,"%d %d 0\n",-(arete);
-	}
+		for(i=0; i<(nbArete*2); i++){
+			fprintf(output,"%d %d 0\n",-(aretes[i]+(couleur*nbSommet)),-(aretes[i+1]+(couleur*nbSommet)));
+			i++;
+		}
 }
