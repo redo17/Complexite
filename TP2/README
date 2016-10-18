@@ -1,0 +1,15 @@
+Compilation faite avec la commande 
+gcc -o nom_exe nom_programme.c
+
+pour tout compiler d'un coup
+sh makefile.sh
+
+test fait avec la commande
+sh script.sh [graphe en argument comme en tp1]
+Exemple du sujet
+sh script.sh 10 15 1 2 2 3 3 4 4 5 5 1 1 6 2 7 3 8 4 9 5 10 6 8 7 9 8 10 9 6 10 7
+
+generation de graphe
+./construireGraphe nbSommet densitee
+le resultat se trouve dans le fichier grapheRand
+
