@@ -27,7 +27,7 @@ void main(int argc, char ** argv)
 	}
 	//les aretes entre chaque sommet (pour chaque couleur)
 	for(couleur=0;couleur<nbCouleur;couleur++)
-		for(i=0; i<(nbArete*2); i++){
+		for(i=0; i<(nbArete*2); ++i){
 			fprintf(output,"%d %d 0\n",-(aretes[i]+(couleur*nbSommet)),-(aretes[i+1]+(couleur*nbSommet)));
 			i++;
 		}

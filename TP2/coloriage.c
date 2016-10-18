@@ -13,6 +13,12 @@ void main()
 	fclose (sommetFile);
 	
 	int sommet[nbSommet];
+	fscanf(input,"%s",poubelle);
+	if(strcmp(poubelle,"UNSAT") == 0){
+		fclose(input);
+		fclose(output);
+		return; 
+	}	
 	fgets(poubelle,50,input);
 	for(i = 0; i< nbSommet;i++)
 		fscanf(input,"%d ",&sommet[i]);
