@@ -1,6 +1,8 @@
 *
 !*.*
 !TP*
+!Makefile
 *.cnf
 *.txt
 *.zip
+!README*
