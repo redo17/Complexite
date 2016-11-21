@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char ** argv)
+int main()
 {
 	FILE* output = fopen("ResultatSudoku.cnf","w");
 	int nbCases = 9*9*9;
 	char chaine[81];
 	int nbClause = 0,i,ligne,colonne,valeur,ligneBis,colonneBis,valeurBis;
 	
+	printf("Rentrer le sudoku\n");
 	scanf("%s", chaine);
 	
 	printf("%d", ((3/9) * 80) + ((3%9) * 9) + 8);
@@ -20,8 +21,8 @@ int main(int argc, char ** argv)
 		if(chaine[i] != '.')
 			 nbClause++;
 			 
-	// sa doit pas etre loin de ca
-	nbClause += 9*9*4 + 9*9*9*4.5*4;
+	// sa doit pas etre loin de ca 9*9*4 + 9*9*9*4*4
+	nbClause += 10530;
 	
 	fprintf(output,"p cnf %d %d\n\n",nbCases,nbClause);
 	
@@ -220,6 +221,6 @@ int main(int argc, char ** argv)
 	for(i = 0; i < 81; i++)
 		if(chaine[i] != '.')
 			fprintf(output,"%d 0\n",((i/9) * 81) + ((i%9) * 9) + chaine[i] - '0');
-			 
+			
 	return 0;
 }
